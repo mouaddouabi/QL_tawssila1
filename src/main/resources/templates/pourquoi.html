@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<link rel="shortcut icon" type="image/png"  href="https://freeiconshop.com/wp-content/uploads/edd/car-flat.png"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<link rel="stylesheet" href="css/style.css">
+<title>TAWSSILA</title>
+</head>
+<body>
+
+<div th:replace="header :: header">
+	</div>
+
+<!-- inside -->
+<br/><br/><br/>
+
+<div class="card mx-auto" style="width: 1250px; padding:25px;">
+	<div class="card-header">
+		<br>
+		<p class="text-center" style="font-size: 50px; color: #17a2b8;"><i class="far fa-question-circle"></i>  Pourquoi</p> 
+	</div>
+	<br><br>
+	<img src="images/pourquoi/pourquoi.png" class="card-img-top" alt="...">
+	
+<br><br><br>
+
+	<!-- introduction -->
+	<div class="row">
+		<div class="col-sm-4">
+			<img src="images/pourquoi/img_1.png" alt="">
+		</div>
+		<div class="col-sm-8">
+			<h3>Le covoiturage c'est quoi ?</h3><br>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le covoiturage est l'utilisation conjointe et organisée (à la différence de l'auto-stop) d'une voiture automobile, 
+				par un conducteur non professionnel et un ou plusieurs tiers passagers, dans le but d'effectuer un trajet commun.
+				Il procure des avantages individuels (partager les dépenses de carburant et de maintenance, agrémenter les voyages, 
+				développer le lien social) et collectifs (augmenter le taux de remplissage des véhicules, diminuer les embouteillages et la pollution)
+				<br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				Au Maroc, le covoiturage est indemnisé dans la limite du barème fiscal kilométrique, 
+				ce qui permet au plus grand nombre de se déplacer. Le conducteur ne doit donc pas faire de bénéfices
+				(l'argent qu'il reçoit doit correspondre au partage des frais liés au trajet). 
+				Il dépend de la motivation des particuliers et repose en grande partie sur un principe collaboratif d'auto-organisation
+				mais peut être encouragé, coorganisé ou aidé par des collectivités ou entreprises qui y trouvent divers bénéfices.
+			</p>
+		</div>	
+	</div>
+
+
+	<!-- Pour qui choisir le covoiturage ? -->
+	<br><br> <hr> <br> 
+	<h2><center>Pour qui choisir le covoiturage ?</center></h2><br>
+	<div class="card-deck">
+		<div class="card">
+			<div class="card-header">
+				<h3><center>Passager</center></h3>
+			</div>
+		  	<img class="card-img-top" src="images/pourquoi/passager.png" alt="Card image cap">
+		  	<div class="card-body">
+				<h5 class="card-title">Trouver un covoiturage</h5>
+				<p class="card-text"> à proximité parmi les trajets
+					qui seront proposés selon vos conditions afin de
+					faciliter votre déplacement entre villes ou au sein de
+					votre même ville dans un cadre conviviale et
+					confortable dans n’importe quel moment et à
+					n'importe quelle destination.</p>
+		  	</div>
+		  	<div class="card-footer"><small class="text-muted"></small></div>  	
+		</div>
+		<div class="card">
+			<div class="card-header">
+				<h3><center>Conducteur</center> </h3>
+			</div>
+			<img class="card-img-top" src="images/pourquoi/conducteur.png" alt="Card image cap">
+			<div class="card-body">
+				<h5 class="card-title">Proposer un covoiturage</h5>
+				<p class="card-text"> pour les personnes dans
+					votre trajet selon vos conditions afin de réduire les
+					coûts de votre déplacement entre villes ou au sein
+					de votre même ville dans n’importe quel moment et
+					à n'importe quelle destination</p>
+			</div>
+			<div class="card-footer"><small class="text-muted"></small></div>
+		</div>
+	</div>
+	<br><br>
+	  
+
+  	<!-- VIDEO PLAY -->
+	<section id="video-play" style="background: url('images/pourquoi/media.jpg');">
+		<div class="dark-overlay">
+			<div class="row">
+				<div class="col">
+					<div class="container p-5">
+						<a href="https://www.youtube.com/embed/066Sc-MHKgE" class="video" data-video="https://www.youtube.com/embed/066Sc-MHKgE" data-toggle="modal" data-target="#videoModal">
+						<i class="fas fa-play fa-3x"></i>
+						</a>
+						<h1>Voir Ce Qu'on Fait !</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+  	</section>
+
+    <!-- VIDEO MODAL -->
+	<div class="modal fade" id="videoModal">
+		<div class="modal-dialog">
+		  <div class="modal-content">
+			<div class="modal-body">
+			  	<button class="close" data-dismiss="modal"><span>&times;</span></button>	
+			  	<iframe src="" frameborder="0" height="350" width="100%" allowfullscreen></iframe>
+			</div>
+		  </div>
+		</div>
+	</div>
+	 
+
+
+	<br><br><hr><br> 
+	<!-- avantages -->
+	<h2><center>Avantages du covoiturage :</center></h2><br><br>
+	<div class="card-deck">
+		<div class="card">
+			<div class="card-header">
+				<center style="font-size:25px"><i class="fas fa-hand-holding-usd"></i>  Avantages Economiques</center> 
+			</div>
+			
+		  	<div class="card-body">
+				<p style="font-size:17px" class="card-title">- Economiser </p>
+				<p style="font-size:17px" class="card-title">- Partager les coûts</p>
+				<p style="font-size:17px" class="card-title">- Réduire son budget de transport</p>
+				
+		  	</div>
+		  	<div class="card-footer"><small class="text-muted"></small></div>
+		</div>
+		<!----------------------------------------------------------------------------->
+		<div class="card">
+			<div class="card-header">
+				<center style="font-size:25px"><i class="fas fa-globe-africa"></i>  Avantages Ecologiques</center> 
+			</div>
+		  	
+		  	<div class="card-body">
+				<p style="font-size:17px" class="card-title">- Réduire le trafic routier</p>
+				<p style="font-size:17px" class="card-title">- Protéger l'environnement</p>
+				<p style="font-size:17px" class="card-title">- Diminuer l’émission de gaz nocifs à effet de serre </p>
+				<p style="font-size:17px" class="card-title">- Limiter la saturation des routes et de l'espace public</p>
+		  	</div>
+		  	<div class="card-footer"><small class="text-muted"></small></div>
+		</div>
+		
+	  </div> <br> <br>
+	  <!-----------------------------------------------------------------------------><br>
+	  <div class="card-deck">
+		<div class="card">
+			<div class="card-header">
+				<center style="font-size:25px"><i class="fas fa-users"></i>  Avantages Sociales</center> 
+			</div>
+		  	
+		  	<div class="card-body">
+				<p style="font-size:17px" class="card-title">- Solidarité et sécurité</p>
+				<p style="font-size:17px" class="card-title">- Rendre service</p>
+				<p style="font-size:17px" class="card-title">- Pallier à l'absence de transports en commun pendant les grèves</p>
+				<p style="font-size:17px" class="card-title">- Faciliter le deplacement des personnes en difficultés : âgés enceintes handicapés</p>
+		  	</div>
+		  	<div class="card-footer"><small class="text-muted"></small></div>
+		</div>
+		<!----------------------------------------------------------------------------->
+		<div class="card">
+			<div class="card-header">
+				<center style="font-size:25px"><i class="fas fa-user"></i>  Avanatages Bien-Etre</center> 
+			</div>
+		  	
+		  	<div class="card-body">
+				<p style="font-size:17px" class="card-title">- Sécuriser sa conduite</p>				
+				<p style="font-size:17px" class="card-title">- Partir au dernier moment</p>
+				<p style="font-size:17px" class="card-title">- Se déplacer plus facilement</p>				
+				<p style="font-size:17px" class="card-title">- Réduire les risques d’accidents</p>
+				<p style="font-size:17px" class="card-title">- Limiter le stress et la fatigue au quotidien</p>
+
+		  	</div>
+		  	<div class="card-footer"><small class="text-muted"></small></div>
+		</div>
+		<!----------------------------------------------------------------------------->
+		<div class="card">
+			<div class="card-header">
+				<center style="font-size:25px"><i class="fas fa-suitcase"></i>  Avantages Professionels</center>
+			</div>
+		  	
+		  	<div class="card-body">
+				<p style="font-size:17px" class="card-title">- Elargir son réseau professionnel</p>
+				<p style="font-size:17px" class="card-title">- Améliorer le climat social de l’entreprise.</p>
+				<p style="font-size:17px" class="card-title">- Développer et d’améliorer l’image de marque de l’entreprise</p>
+				<p style="font-size:17px" class="card-title">- Favoriser des relations positives entre collaborateurs des différents services.</p>
+		  	</div>
+		  	<div class="card-footer"><small class="text-muted"></small></div>
+		</div>
+	</div>
+
+
+	<br><br><hr><br> 
+	<h2><center>Quel futur pour le covoiturage ?</center></h2><br><br>
+	<!-- futur --> 
+	<div class="row">
+		<div class="col-sm-4">
+			<img src="images/pourquoi/img_2.png" alt="">
+		</div>
+		<div class="col-sm-8">
+			
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le covoiturage n'est pas une idée nouvelle, mais Internet, les smartphones et les applications lui ont redonné vie. 
+				ce sujet a été présenté par Travis Kalanick lui-même 
+				dans une conférence TED en mars intitulée «Le plan d'Uber pour déplacer plus de personnes dans moins de voitures» et a connu un tel succès que 
+				l'entreprise elle-même a même eu d'émettre des communiqués dans certaines villes demandant aux gens de ne pas l'utiliser comme un service de rencontres. 
+				Présent actuellement dans plus de 45 villes. <br><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Il y a plusieurs années, le covoiturage n’allait pas de soi et était peu connu en Maroc. 
+				Mais ces 10 dernières années, depuis le lancement des services pareilles en Afrique, on a vu notre communauté, ainsi que le niveau de confiance au sein de celle-ci, grandir. 
+				On peut dire que le covoiturage a transformé la façon dont on perçoit le transport et notre relation avec notre communauté. 
+				Aujourd’hui, Tawssila a plus de 10 000 membres, et continue à mettre en relation des personnes cherchant à voyager sur de longues distances avec des conducteurs allant dans la même direction.
+			</p><br><br><br>
+		</div>	
+		
+	</div>
+	<center><h1>Maintenant que vous savez tout, essayez le covoiturage! </h1></center><br>
+	
+
+
+
+	
+
+</div>
+
+
+
+
+<br/><br/><br/><br/><br/><br/><br/>
+
+
+<!-- footer -->
+		
+		 	 <div th:replace="footer :: footer">
+	</div>
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<script>
+	// Video Play
+	$(function () {
+		// Auto play modal video
+		$(".video").click(function () {
+			var theModal = $(this).data("target"),
+			videoSRC = $(this).attr("data-video"),
+			videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";
+			$(theModal + ' iframe').attr('src', videoSRCauto);
+			$(theModal + ' button.close').click(function () {
+			$(theModal + ' iframe').attr('src', videoSRC);
+			});
+		});
+	});
+  </script>
+
+</body>
+</html>

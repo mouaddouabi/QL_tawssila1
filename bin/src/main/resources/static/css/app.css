@@ -1,0 +1,68 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+*{
+    margin:0;
+    padding:0;
+
+}
+
+.menu-bar{
+    background: #17a2b8;
+}
+
+.caroussel-color{
+    background: #17a2b8;
+}
+
+.footer-tawssila
+{
+    background: #17a2b8;
+    height: 100px;
+}
+.wrapper
+{
+    width: 940px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+#steps ul
+{
+    margin: 80px 0;
+}
+#steps ul li
+{
+    width: 300px;
+    float:left;
+    padding-top: 140px;
+    text-align: center;
+    margin-right: 10px;
+    
+}
+#steps h4
+{
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+#steps p
+{
+    margin-bottom: 20px;
+}
+#step-1
+{
+    background: url('/images/steps-icon-1.png') no-repeat top center;
+}
+#step-2
+{
+    background: url('/images/steps-icon-2.png') no-repeat top center;
+    
+}
+#step-3
+{
+    background: url('/images/steps-icon-3.png') no-repeat top center;
+}
+
+.clear
+{
+    clear: both;   
+}

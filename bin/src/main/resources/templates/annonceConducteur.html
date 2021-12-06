@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<title>TAWSSILA</title>
+<link rel="shortcut icon" type="image/png"  href="https://freeiconshop.com/wp-content/uploads/edd/car-flat.png"/>
+
+<style>
+	video#bgvid {
+  position: fixed; right: 0; bottom: 0;left:0;
+  width: 100%;
+  z-index: -100;
+  background: url(polina.jpg) no-repeat;
+  background-size: cover;
+  
+}
+</style>
+
+</head>
+<body>
+	
+	<div th:replace="header :: header">
+	</div>
+	
+	<video src="images/vid.mp4" autoplay loop id="bgvid" muted></video>
+		<!-- inside --Annonce--Conducteur-->
+		
+	
+<div class="container  mt-5" style="max-width: 700px;">
+<div class="card border border-success" >
+	<h5 class="card-header text-center text-white" style="background-color: #00AA9E;">Déposez votre annonce !</h5>
+	<div class="form-group card-body"> 
+		<form th:action="@{/DeposerAnnonceConducteur}" method="post" th:object="${annonce}">
+		
+		
+		 <input type="radio" id="radio1" value="1" onclick="checker()" th:field="*{AuSeinVille}" /> <label for="list">Au Sein de la ville (Agadir) <span class="requis">*</span></label><br> 
+		<input type="radio" id="radio2" value="0" onclick="checker()" th:field="*{AuSeinVille}" /> <label for="list">Ville à ville  <span class="requis">*</span></label><br> 
+			  
+			  
+		 
+		 <div class="form-group row">
+			  <label for="example-date-input" class="col-2 col-form-label">Date</label>
+			    <input class="form-control col-10" required="required" th:field="*{date}" type="date" value="2011-08-19" id="example-date-input">
+		</div>
+		 
+		<!-- <div id="quart" >
+		 <br>
+		  <label for="user">Quartier de départ<span class="requis">*</span></label><br> 
+		 <select required="required" class="browser-default custom-select" th:field="*{lieuDepart}" id="select11">
+			  <option value="Casablanca">Casablanca</option>
+			  <option value="Fés">Fés</option>
+			  <option value="Tanger">Tanger</option>
+			  <option value="Marrakech">Marrakech</option>
+			  <option value="Salé">Salé</option>
+			  <option value="Laayoune">Laayoune</option>
+			  <option value="Meknès">Meknès</option>
+			  <option value="Rabat">Rabat</option>
+			  <option value="Oujda">Oujda</option>
+			  <option value="Kénitra">Kénitra</option>
+			  <option value="Agadir">Agadir</option>
+			  <option value="Tétouan">Tétouan</option>
+			  <option value="temara">Témara</option>
+			  <option value="Safi">Safi</option>
+			  <option value="Mohammédia">Mohammédia</option>
+			 <option value="Khouribga">Khouribga</option>
+			  <option value="El Jadida">El Jadida</option>
+			  <option value="Béni Mellal">Béni Mellal</option>
+			  <option value="Nador">Nador</option>
+			  <option value="Taza">Taza</option>
+			  <option value="Essemara">Essemara</option>
+			  <option value="Dakhla">Dakhla</option>
+			  <option value="Boujdour">Boujdour</option>
+			  <option value="Tantan">Tantan</option>
+			  <option value="Guelmim">Guelmim</option>
+			  <option value="Assa">Assa</option>
+			  
+			  
+			</select>
+		 
+		 <label for="user">Quartier d'arrivé<span class="requis">*</span></label><br> 
+		 	<select required="required" class="browser-default custom-select" th:field="*{lieuArrive}"  id="select12">
+			<option value="Casablanca">Casablanca</option>
+			  <option value="Fés">Fés</option>
+			  <option value="Tanger">Tanger</option>
+			  <option value="Marrakech">Marrakech</option>
+			  <option value="Salé">Salé</option>
+			  <option value="Laayoune">Laayoune</option>
+			  <option value="Meknès">Meknès</option>
+			  <option value="Rabat">Rabat</option>
+			  <option value="Oujda">Oujda</option>
+			  <option value="Kénitra">Kénitra</option>
+			  <option value="Agadir">Agadir</option>
+			  <option value="Tétouan">Tétouan</option>
+			  <option value="temara">Témara</option>
+			  <option value="Safi">Safi</option>
+			  <option value="Mohammédia">Mohammédia</option>
+			 <option value="Khouribga">Khouribga</option>
+			  <option value="El Jadida">El Jadida</option>
+			  <option value="Béni Mellal">Béni Mellal</option>
+			  <option value="Nador">Nador</option>
+			  <option value="Taza">Taza</option>
+			  <option value="Essemara">Essemara</option>
+			  <option value="Dakhla">Dakhla</option>
+			  <option value="Boujdour">Boujdour</option>
+			  <option value="Tantan">Tantan</option>
+			  <option value="Guelmim">Guelmim</option>
+			  <option value="Assa">Assa</option>
+				</select> 
+		 </div>  -->
+		 
+	<div id="quart" >	
+	
+		<div class="form-group row">
+			
+			<label class="col-2" for="user">Quartier de départ<span class="requis">*</span></label>
+			 <select required="required" class="browser-default custom-select col-10" th:field="*{lieuDepart}" id="select11">
+				<optgroup label="Quartiers">
+			        <option class="dropdown-item" value="Hay mohammadi">Hay mohammadi</option>
+			        <option class="dropdown-item" value="Hay eddakhla"> Hay eddakhla</option>
+			        <option class="dropdown-item" value="Hay el farah">Hay el farah</option>
+			        <option class="dropdown-item"  value="Hay essalam">Hay essalam</option>
+			        <option class="dropdown-item" value="Quartier indutriel">Quartier indutriel</option>
+			        <option class="dropdown-item" value="Anza">Anza</option>
+			        <option class="dropdown-item" value="Cite adrar">Cite adrar</option>
+			        <option class="dropdown-item" value="Ait melloul">Ait melloul</option>
+			        <option class="dropdown-item" value="Inzegane">Inzegane</option>
+			        <option class="dropdown-item" value="Tikiouine">Tikiouine</option>
+			        <option class="dropdown-item" value="Bensargao">Bensargao</option>
+			        <option class="dropdown-item" value="Cite iligh">Cite iligh</option>
+			        <option  class="dropdown-item" value="Drarga">Drarga</option>
+			        <option class="dropdown-item" value="Dcheira">Dcheira</option>
+			        <option class="dropdown-item" value="Lqliaa">Lqliaa</option>
+			    </optgroup>
+			    <optgroup label="Etablissements">
+			        <option class="dropdown-item" value="ENSA-Universiapolis-FMPA">ENSA-Universiapolis-FMPA</option>
+			        <option class="dropdown-item" value="ENCG Agadir">ENCG Agadir</option>
+			        <option class="dropdown-item" value="ENA Agadir">ENA Agadir</option>
+			        <option class="dropdown-item" value="EST Agadir">EST Agadir</option>
+			        <option class="dropdown-item" value="ISIAM Faculte privée">ISIAM Faculte privée</option>
+			        <option class="dropdown-item" value="HESSI BUSINESS SCHOOL">HESSI BUSINESS SCHOOL</option>
+			        <option class="dropdown-item" value="ISPITS Agadir">ISPITS Agadir</option>
+			        <option class="dropdown-item" value="ESMS BUSINESS SCHOOL">ESMS BUSINESS SCHOOL</option>
+			        <option class="dropdown-item" value="SUP'HCOM">SUP'HCOM</option>
+			    </optgroup>
+			    <optgroup label="Espaces Commerciales">
+			        <option class="dropdown-item" value="Marjane-Electroplanet">Marjane-Electroplanet</option>
+			        <option class="dropdown-item" value="Asswak Essalam">Asswak Essalam</option>
+			        <option class="dropdown-item" value="Decathlon-Kiabi-LC Wakiki-DeFacto">Decathlon-Kiabi-LC Wakiki-DeFacto</option>
+			        <option class="dropdown-item" value="Souk ELhad">Souk ELhad</option>
+			        <option class="dropdown-item" value="Zara">Zara</option>
+			        <option class="dropdown-item" value="BestMark">BestMark</option>
+			        <option class="dropdown-item" value="Art Galley Agadir">Art Galley Agadir</option>
+			        <option class="dropdown-item" value="Sport Plus">Sport Plus</option>
+			        <option class="dropdown-item" value="La Grande Recré">La Grande Recré</option>
+			    </optgroup>
+			    <optgroup label="Parcs et Divertissements">
+			        <option class="dropdown-item" value="Crocoparc">Crocoparc</option>
+			        <option class="dropdown-item" value="Xtreme Parc"> Xtreme Parc</option>
+			        <option class="dropdown-item" value="Jardin Amzil">Jardin Amzil</option>
+			        <option class="dropdown-item" value="Souss Parc">Souss Parc</option>
+			        <option class="dropdown-item" value="Vallee des oiseaux">Vallee des oiseaux</option>
+			        <option class="dropdown-item" value="Parc Tilila">Parc Tilila</option>
+			        <option class="dropdown-item" value="Dania Land">Dania Land</option>
+			    </optgroup>  
+			</select>
+			
+		</div>
+
+		 
+		 
+		 <div class="form-group row">
+		 
+		 	<label for="user" class="col-2">Quartier d'arrivée<span class="requis">*</span></label><br> 
+			 <select required="required" class="browser-default custom-select col-10" th:field="*{lieuArrive}"  id="select12">
+				<optgroup label="Quartiers">
+			        <option class="dropdown-item" value="Hay mohammadi">Hay mohammadi</option>
+			        <option class="dropdown-item" value="Hay eddakhla"> Hay eddakhla</option>
+			        <option class="dropdown-item" value="Hay el farah">Hay el farah</option>
+			        <option class="dropdown-item"  value="Hay essalam">Hay essalam</option>
+			        <option class="dropdown-item" value="Quartier indutriel">Quartier indutriel</option>
+			        <option class="dropdown-item" value="Anza">Anza</option>
+			        <option class="dropdown-item" value="Cite adrar">Cite adrar</option>
+			        <option class="dropdown-item" value="Ait melloul">Ait melloul</option>
+			        <option class="dropdown-item" value="Inzegane">Inzegane</option>
+			        <option class="dropdown-item" value="Tikiouine">Tikiouine</option>
+			        <option class="dropdown-item" value="Bensargao">Bensargao</option>
+			        <option class="dropdown-item" value="Cite iligh">Cite iligh</option>
+			        <option  class="dropdown-item" value="Drarga">Drarga</option>
+			        <option class="dropdown-item" value="Dcheira">Dcheira</option>
+			        <option class="dropdown-item" value="Lqliaa">Lqliaa</option>
+			    </optgroup>
+			    <optgroup label="Etablissements">
+			        <option class="dropdown-item" value="ENSA-Universiapolis-FMPA">ENSA-Universiapolis-FMPA</option>
+			        <option class="dropdown-item" value="ENCG Agadir">ENCG Agadir</option>
+			        <option class="dropdown-item" value="ENA Agadir">ENA Agadir</option>
+			        <option class="dropdown-item" value="EST Agadir">EST Agadir</option>
+			        <option class="dropdown-item" value="ISIAM Faculte privée">ISIAM Faculte privée</option>
+			        <option class="dropdown-item" value="HESSI BUSINESS SCHOOL">HESSI BUSINESS SCHOOL</option>
+			        <option class="dropdown-item" value="ISPITS Agadir">ISPITS Agadir</option>
+			        <option class="dropdown-item" value="ESMS BUSINESS SCHOOL">ESMS BUSINESS SCHOOL</option>
+			        <option class="dropdown-item" value="SUP'HCOM">SUP'HCOM</option>
+			    </optgroup>
+			    <optgroup label="Espaces Commerciales">
+			        <option class="dropdown-item" value="Marjane-Electroplanet">Marjane-Electroplanet</option>
+			        <option class="dropdown-item" value="Asswak Essalam">Asswak Essalam</option>
+			        <option class="dropdown-item" value="Decathlon-Kiabi-LC Wakiki-DeFacto">Decathlon-Kiabi-LC Wakiki-DeFacto</option>
+			        <option class="dropdown-item" value="Souk ELhad">Souk ELhad</option>
+			        <option class="dropdown-item" value="Zara">Zara</option>
+			        <option class="dropdown-item" value="BestMark">BestMark</option>
+			        <option class="dropdown-item" value="Art Galley Agadir">Art Galley Agadir</option>
+			        <option class="dropdown-item" value="Sport Plus">Sport Plus</option>
+			        <option class="dropdown-item" value="La Grande Recré">La Grande Recré</option>
+			    </optgroup>
+			    <optgroup label="Parcs et Divertissements">
+			        <option class="dropdown-item" value="Crocoparc">Crocoparc</option>
+			        <option class="dropdown-item" value="Xtreme Parc"> Xtreme Parc</option>
+			        <option class="dropdown-item" value="Jardin Amzil">Jardin Amzil</option>
+			        <option class="dropdown-item" value="Souss Parc">Souss Parc</option>
+			        <option class="dropdown-item" value="Vallee des oiseaux">Vallee des oiseaux</option>
+			        <option class="dropdown-item" value="Parc Tilila">Parc Tilila</option>
+			        <option class="dropdown-item" value="Dania Land">Dania Land</option>
+			    </optgroup>   
+			</select>
+			 	
+		 </div>
+		 
+		 
+		 
+	</div>
+	
+	
+		 
+		 <div id="vil" > 
+		<div class="form-group row" >
+		 <label for="user" class="col-2">Ville de départ<span class="requis">*</span></label><br> 
+		 <select required="required" class="browser-default custom-select col-10" th:field="*{lieuDepart}"  id="select21">
+			  <option value="Casablanca">Casablanca</option>
+			  <option value="Fés">Fés</option>
+			  <option value="Tanger">Tanger</option>
+			  <option value="Marrakech">Marrakech</option>
+			  <option value="Salé">Salé</option>
+			  <option value="Laayoune">Laayoune</option>
+			  <option value="Meknès">Meknès</option>
+			  <option value="Rabat">Rabat</option>
+			  <option value="Oujda">Oujda</option>
+			  <option value="Kénitra">Kénitra</option>
+			  <option value="Agadir">Agadir</option>
+			  <option value="Tétouan">Tétouan</option>
+			  <option value="temara">Témara</option>
+			  <option value="Safi">Safi</option>
+			  <option value="Mohammédia">Mohammédia</option>
+			 <option value="Khouribga">Khouribga</option>
+			  <option value="El Jadida">El Jadida</option>
+			  <option value="Béni Mellal">Béni Mellal</option>
+			  <option value="Nador">Nador</option>
+			  <option value="Taza">Taza</option>
+			  <option value="Essemara">Essemara</option>
+			  <option value="Dakhla">Dakhla</option>
+			  <option value="Boujdour">Boujdour</option>
+			  <option value="Tantan">Tantan</option>
+			  <option value="Guelmim">Guelmim</option>
+			  <option value="Assa">Assa</option>
+			  
+			  
+			</select>
+			
+		</div>
+		 
+		 <div class="form-group row">
+		 	
+		 			<label for="user" class="col-2">Ville d'arrivée<span class="requis">*</span></label>
+		 	
+		 		<select required="required" class="browser-default custom-select col-10" th:field="*{lieuArrive}"  id="select22">
+					<option value="Casablanca">Casablanca</option>
+					  <option value="Fés">Fés</option>
+					  <option value="Tanger">Tanger</option>
+					  <option value="Marrakech">Marrakech</option>
+					  <option value="Salé">Salé</option>
+					  <option value="Laayoune">Laayoune</option>
+					  <option value="Meknès">Meknès</option>
+					  <option value="Rabat">Rabat</option>
+					  <option value="Oujda">Oujda</option>
+					  <option value="Kénitra">Kénitra</option>
+					  <option value="Agadir">Agadir</option>
+					  <option value="Tétouan">Tétouan</option>
+					  <option value="temara">Témara</option>
+					  <option value="Safi">Safi</option>
+					  <option value="Mohammédia">Mohammédia</option>
+					 <option value="Khouribga">Khouribga</option>
+					  <option value="El Jadida">El Jadida</option>
+					  <option value="Béni Mellal">Béni Mellal</option>
+					  <option value="Nador">Nador</option>
+					  <option value="Taza">Taza</option>
+					  <option value="Essemara">Essemara</option>
+					  <option value="Dakhla">Dakhla</option>
+					  <option value="Boujdour">Boujdour</option>
+					  <option value="Tantan">Tantan</option>
+					  <option value="Guelmim">Guelmim</option>
+					  <option value="Assa">Assa</option>
+				</select> 
+		 	
+		 </div>
+		 	
+		 <br>
+		 
+		 <div class="form-check">
+			<label class="form-check-label">
+				<input id="auto" type="checkbox" class="form-check-input" checked="checked" th:field="*{autoroute}" /><label for="list">Autoroute<span class="requis">*</span></label>
+			</label>
+		</div>
+		 
+		 
+	</div>
+	
+		  <div class="form-group row">
+		 	<label for="user" class="col-2 col-form-label">Prix<span class="requis">*</span></label>
+		 		<input required="required" class="form-control col-10"  type="number" placeholder="Prix en DH" id="text" th:field="*{prix}">
+		 </div>
+		 
+		  
+		 
+		 
+		 <div class="form-group row">
+		 	<label for="user" class="col-2 col-form-label">Nombre de places<span class="requis">*</span></label>
+		 		<input required="required" class="form-control col-10" type="number" id="text" th:field="*{nbPlaces}"> <br> 
+		 </div>
+		 
+		 
+		 
+		 
+		 <div class="form-group row">
+		 		<label for="user" class="col-2 col-form-label">Numéro de téléphone<span class="requis">*</span></label>
+		 			<input required="required" class="form-control col-10" type="number"  id="text" th:field="*{telephone}">
+		 </div>
+		
+		<div class="form-check">
+			<label class="form-check-label">
+				<input type="checkbox" class="form-check-input" th:field="*{fumeur}" /> <label for="list">Fumeur<span class="requis">*</span></label>
+			</label>
+		</div>
+			
+		<div class="form-check">
+			<label class="form-check-label">
+				<input  type="checkbox" class="form-check-input"  th:field="*{music}" /><label for="list">Musique<span class="requis">*</span></label>
+			</label>
+		</div>
+		 
+		
+		
+		 
+		 <div class="form-group row">
+		 
+		 	<label for="user" class="col-2 col-form-label">Véhicule<span ></span></label>
+			 	<select required="required" class="browser-default custom-select form-control col-10" th:field="*{vehicule}"  id="text">
+						 <option value="Mercedes">Mercedes</option>
+						 <option value="Renault">Renault</option>
+						 <option value="Seat ">Seat </option>
+						 <option value="Fiat ">Fiat </option>
+						 <option value="KIA">KIA</option>
+						 <option value="Suzuki ">Suzuki </option>
+						 <option value="Chery  ">Chery  </option>
+						 <option value="Toyota ">Toyota </option>
+						 <option value="Jeep ">Jeep </option>
+						 <option value="Nissan ">Nissan </option>
+						 <option value="Golf ">Golf </option>
+						 <option value="Polo ">Polo </option>
+						 <option value="BMW ">BMW </option>
+						 <option value="Ford ">Ford </option>
+				 </select>
+			 
+		 
+		 </div>
+		 
+		 <div class="form-group row">
+		 	<label for="text" class="col-2 col-form-label">Taille de bagage autorisée</label>
+		 		<input class="form-control col-10" required="required" placeholder="en KG" type="number" id="text" th:field="*{tailleBagage}"> <br> 
+		 </div>
+		  
+		 
+		 <div class="form-group">
+		    <label for="exampleTextarea">Déscription</label>
+		    <textarea class="form-control" th:field="*{description}" id="text" rows="4" cols="50"></textarea>
+		  </div>
+		  
+		 
+		 
+		 
+		 <div class="form-group row">
+		 	<label for="user" class="col-2">Code d'évaluation  <small class="text-muted">(à donner au passager pour vous noter)</small></label>
+		 	<input class="col-10 form-control" required="required" type="text" id="text" th:field="*{codeRating}"> 
+		 </div>
+		 
+		
+		 
+			  <div class="form-group row" >
+			<button  type="submit" class="btn btn-success btn-block col-8 offset-2">Valider </button>
+		</div>
+		
+			</form>
+
+	</div>
+</div>
+</div>	
+	
+	
+	
+	<script>
+			if(document.getElementById("radio2").checked){
+					document.getElementById("quart").style.display = 'none';
+					document.getElementById("vil").style.display = '';
+					document.getElementById("select11").setAttribute("disabled","disabled");
+					document.getElementById("select12").setAttribute("disabled","disabled");
+					
+					document.getElementById("select21").removeAttribute('disabled');
+					document.getElementById("select22").removeAttribute('disabled');
+					document.getElementById("auto").removeAttribute('disabled');
+				}
+				 if(document.getElementById("radio1").checked){
+					document.getElementById("vil").style.display = 'none';
+					document.getElementById("quart").style.display = '';
+					document.getElementById("select21").setAttribute("disabled","disabled");
+					document.getElementById("select22").setAttribute("disabled","disabled");
+					document.getElementById("auto").setAttribute("disabled","disabled");
+					
+					document.getElementById("select11").removeAttribute('disabled');
+					document.getElementById("select12").removeAttribute('disabled');
+					document.getElementById("auto").removeAttribute('disabled');
+				}
+			function checker(){
+			  		if(document.getElementById("radio2").checked){
+			  			document.getElementById("quart").style.display = 'none';
+			  			document.getElementById("vil").style.display = '';
+			  			document.getElementById("select11").setAttribute("disabled","disabled");
+						document.getElementById("select12").setAttribute("disabled","disabled");
+						
+						document.getElementById("select21").removeAttribute('disabled');
+						document.getElementById("select22").removeAttribute('disabled');
+						document.getElementById("auto").removeAttribute('disabled');
+			  		}
+			  		 if(document.getElementById("radio1").checked){
+			  			document.getElementById("vil").style.display = 'none';
+			  			document.getElementById("quart").style.display = '';
+			  			
+			  			document.getElementById("select21").setAttribute("disabled","disabled");
+						document.getElementById("select22").setAttribute("disabled","disabled");
+						document.getElementById("auto").setAttribute("disabled","disabled");
+						
+						document.getElementById("select11").removeAttribute('disabled');
+						document.getElementById("select12").removeAttribute('disabled');
+			  		}
+			}		  		
+			  </script>
+	
+	<br><br>
+	
+	<!-- footer -->
+		
+		 <div th:replace="footer :: footer">
+	</div>
+
+	
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+	
+</body>
+</html>
